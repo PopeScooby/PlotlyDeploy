@@ -49,6 +49,7 @@ function buildMetadata(sample) {
     Object.entries(result).forEach(([key, value]) => {
       PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
     });
+    PANEL.style.backgroundColor = 'brown';
 
   });
 }
@@ -96,7 +97,8 @@ function buildCharts(sample) {
 
     // 9. Create the layout for the bar chart. 
     var barLayout = {
-      title: "Top 10 Bacterial Cultures Found"
+      title: "Top 10 Bacterial Cultures Found",
+      paper_bgcolor: "rgba(0,0,0,0)"
     };
     // 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot("bar", barData, barLayout);
@@ -156,9 +158,10 @@ function buildCharts(sample) {
     
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { 
-      width: 400,
+      // width: 400,
       height: 300,
       title: {text: "Belly Button Washing Frequency", font: { size: 20}},
+      paper_bgcolor: "rgba(0,0,0,0)"
       // margin: { t: 100, r: 0, l: 0, b: 0 },
       // paper_bgcolor: "lavender",
       // font: { color: "darkblue", family: "Arial" }
