@@ -49,7 +49,6 @@ function buildMetadata(sample) {
     Object.entries(result).forEach(([key, value]) => {
       PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
     });
-    PANEL.style.backgroundColor = 'brown';
 
   });
 }
@@ -122,7 +121,9 @@ function buildCharts(sample) {
     var bubbleLayout = {
       xaxis: {title: "OTU ID"},
       title: 'Bacteria Cultures Per Sample',
+      paper_bgcolor: "rgb(78,44,44)",
       showlegend: false,
+      font: {color: 'rgb(229, 229, 240)', family:'Times New Roman', size: 20},
       // height: 600,
       // width: 1200,
       hovermode:'closest'
@@ -149,7 +150,7 @@ function buildCharts(sample) {
             { range: [0, 2], color: "red" },
             { range: [2, 4], color: "orange" },
             { range: [4, 6], color: "yellow" },
-            { range: [6, 8], color: "forestgreen" },
+            { range: [6, 8], color: "lightgreen" },
             { range: [8, 10], color: "green" }
           ]
         }
@@ -162,9 +163,6 @@ function buildCharts(sample) {
       height: 300,
       title: {text: "Belly Button Washing Frequency", font: { size: 20}},
       paper_bgcolor: "rgba(0,0,0,0)"
-      // margin: { t: 100, r: 0, l: 0, b: 0 },
-      // paper_bgcolor: "lavender",
-      // font: { color: "darkblue", family: "Arial" }
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
